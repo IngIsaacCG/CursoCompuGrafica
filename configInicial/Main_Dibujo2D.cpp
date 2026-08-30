@@ -1,6 +1,6 @@
 //Practica 2
 //Chavez Garcia Isaac
-//Fecha de entrega:
+//Fecha de entrega: 28/08/2026
 //320299461
 
 #include<iostream>
@@ -65,18 +65,24 @@ int main() {
 	// Set up vertex data (and buffer(s)) and attribute pointers
 	float vertices[] = {
 		//EjeX  EjeY  EjeZ			Color
-		0.5f,  0.0f, 0.0f,    1.0f,0.0f,0.0f,  // top right
-		0.0f, -0.5f, 0.0f,    1.0f,1.0f,0.0f,  // bottom right
-		-0.5f, 0.0f, 0.0f,   1.0f,0.0f,1.0f,  // bottom left
-		0.0f,  0.5f, 0.0f,   1.0f,1.0f,0.0f, // top left 
-		0.0f,  0.0f, 0.0f,   1.0f,1.0f,1.0f, // center
-		-0.5f, 0.5f, 0.0f,   1.0f,0.0f,1.0f, // top left fishtail
-		-0.5f, -0.5f, 0.0f,   1.0f,1.0f,0.0f, // bottom left fishtail
+		0.5f,  0.0f, 0.0f,    1.0f,1.0f,2.0f,  // top right [0]
+		0.0f, -0.5f, 0.0f,    1.0f,1.0f,0.0f,  // bottom right [1]
+		-0.5f, 0.0f, 0.0f,   1.0f,1.0f,0.0f,  // bottom left [2]
+		0.0f,  0.5f, 0.0f,   1.0f,1.0f,0.0f, // top left [3]
+		0.0f,  0.0f, 0.0f,   1.0f,1.0f,0.0f, // center [4]
+		-0.6f, 0.5f, 0.0f,   1.0f,1.0f,0.0f, // top left fishtail [5]
+		-0.6f, -0.5f, 0.0f,   1.0f,1.0f,0.0f, // bottom left fishtail [6]
+		-0.3f, 0.8f, 0.0f,   1.0f,1.0f,0.0f, // top right fishtail [7]
+		-0.3f, -0.8f, 0.0f,   1.0f,1.0f,0.0f, // bottom right fishtail [8]
 
 	};
 	unsigned int indices[] = {  // note that we start from 0!
-		3,2,1,// second Triangle
+		//3,2,1,// second Triangle
 		0,1,3,
+		1,2,3,
+		4,5,6,
+		4,7,3,
+		4,8,1,
 		
 	};
 
@@ -131,14 +137,14 @@ int main() {
 
 
         glPointSize(10);
-        glDrawArrays(GL_POINTS,0,7);
+        glDrawArrays(GL_POINTS,0,9);
         
         //glDrawArrays(GL_LINES,0,4);
         //glDrawArrays(GL_LINE_LOOP,0,4);
         
-        //glDrawArrays(GL_TRIANGLES,0,3);
-        //glDrawElements(GL_TRIANGLES, 3,GL_UNSIGNED_INT,0);
-
+        //glDrawArrays(GL_TRIANGLES,3,0);
+		//glDrawElements(GL_TRIANGLES,3, GL_UNSIGNED_INT,0);//glDrawElements(figura, num elementos, tamaño, donde inicia);
+		glDrawElements(GL_TRIANGLES,15,GL_UNSIGNED_INT,0);
         
         
         glBindVertexArray(0);
