@@ -1,6 +1,6 @@
 //Practica 2
 //Chavez Garcia Isaac
-//Fecha de entrega:
+//Fecha de entrega: 28/08/2026
 //320299461
 
 #include<iostream>
