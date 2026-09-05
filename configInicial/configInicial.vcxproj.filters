@@ -13,26 +13,26 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Archivos de origen\Sheider">
-      <UniqueIdentifier>{0c45a0a5-c7a2-4aca-a8f7-52e27f7e4faf}</UniqueIdentifier>
+    <Filter Include="Archivos de origen\Shader">
+      <UniqueIdentifier>{011a05e1-e76a-4f69-a12f-6c091d92bd85}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Shader.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Shader\core.frag">
-      <Filter>Archivos de origen\Sheider</Filter>
-    </None>
-    <None Include="Shader\core.vs">
-      <Filter>Archivos de origen\Sheider</Filter>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main_Modelado.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shader\core.frag">
+      <Filter>Archivos de origen\Shader</Filter>
+    </None>
+    <None Include="Shader\core.vs">
+      <Filter>Archivos de origen\Shader</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Shader.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
