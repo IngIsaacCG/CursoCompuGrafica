@@ -34,7 +34,7 @@ int main() {
 
 	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 
-	GLFWwindow *window = glfwCreateWindow(WIDTH, HEIGHT, "Modelado geometrico", nullptr, nullptr);
+	GLFWwindow *window = glfwCreateWindow(WIDTH, HEIGHT, "Modelado geometrico (Isaac Chavez Garcia)", nullptr, nullptr);
 
 	int screenWidth, screenHeight;
 
@@ -195,15 +195,42 @@ int main() {
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 	
 
-		glBindVertexArray(VAO);
+		glBindVertexArray(VAO); //Aqui empieza el previo 04
 	
 	    model = glm::mat4(1.0f);
+		model = glm::scale(model, glm::vec3(3.0f, 0.1f, 2.0f)); //Ancho, grosor, profundidad
+		model = glm::translate(model, glm::vec3(0.0f, 0.6f, 0.0f)); //Posicion
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
+
+		model = glm::mat4(1.0f);
+		model = glm::scale(model, glm::vec3(0.1f, 0.6f, 0.1f)); //Tamño de pata
+		model = glm::translate(model, glm::vec3(2.9f, -0.6f, 1.9f)); //Posicion de pata
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+
+		//Pata 2
+		model = glm::mat4(1.0f);
+		model = glm::scale(model, glm::vec3(0.1f, 0.6f, 0.1f)); //Tamño de pata
+		model = glm::translate(model, glm::vec3(-2.9f, -0.6f, 1.9f)); //Posicion de pata
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+
+		//Pata 3
+		model = glm::mat4(1.0f);
+		model = glm::scale(model, glm::vec3(0.1f, 0.6f, 0.1f)); //Tamño de pata
+		model = glm::translate(model, glm::vec3(2.9f, -0.6f, -1.9f)); //Posicion de pata
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+
+		////Pata 4
+		model = glm::mat4(1.0f);
+		model = glm::scale(model, glm::vec3(0.1f, 0.6f, 0.1f)); //Tamño de pata
+		model = glm::translate(model, glm::vec3(-2.9f, -0.6f, -1.9f)); //Posicion de pata
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+
 		glBindVertexArray(0);
-
-				
-
 		// Swap the screen buffers
 		glfwSwapBuffers(window);
 	
